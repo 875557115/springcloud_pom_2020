@@ -1,0 +1,16 @@
+server:
+  port: 7001
+spring:
+  application:
+    name: Eureka-01
+eureka:
+  client:
+    registerWithEureka: false  #不注册自己（默认true，用在集群中）
+    fetchRegistry: true   #不要获取自己的信息（默认true，用在集群中）
+    serviceUrl:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
+
+  #关闭自我保护机制，保证不可能服务及时剔除
+  #server:
+   # enable-self-preservation: false
+   # eviction-interval-timer-in-ms: 2000
